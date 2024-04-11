@@ -1,0 +1,36 @@
+<div th:fragment="header" xmlns:sec="http://www.w3.org/1999/xhtml">
+    <div class="container">
+        <div class="nav-logo">
+            <a th:href="@{/home}" href="#">
+                <img src="/images/SAU-LOGO.svg" alt="SAU logo">
+            </a>
+        </div>
+
+        <nav class="nav-bar">
+            <ul>
+                <li> <a th:href="@{/home}">Главная</a></li>
+                <li> <a th:href="@{/home/shop}">Магазин</a></li>
+                <li> <a th:href="@{/home/about-us}">О нас</a></li>
+                <li> <a th:href="@{/home/info}">Информация</a></li>
+                <li> <a th:href="@{/home/blogs}">Блог</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-btns">
+            <div class="nav-cart">
+                <a th:href="@{/cart}"> <img src="/images/cart.svg" alt="cart">
+                    <span th:text="${cartCounter}"></span>
+                </a>
+            </div>
+            <div class="nav-register">
+                <form class="nav-register" sec:authorize="!isAuthenticated()">
+                    <a th:href="@{/login}" role="button" aria-disabled="true">Войти</a>
+                </form>
+                <form class="nav-register" sec:authorize="isAuthenticated()">
+                    <a th:href="@{/logout}" role="button" aria-disabled="true">Выйти</a>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

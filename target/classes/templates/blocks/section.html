@@ -1,0 +1,21 @@
+<div th:fragment="section">
+    <section class="sidebar" >
+        <div class="logo">
+            <a th:href="@{/admin}">
+                <img src="/images/SAU-LOGO.svg" alt="sau logo" width="107" height="60">
+            </a>
+        </div>
+        <ul>
+            <li><a th:href="@{/admin}" class="nav-link">Дом</a></li>
+            <li><a th:href="@{/admin/categories}" class="nav-link">Категории</a></li>
+            <li><a th:href="@{/admin/products}" class="nav-link">Продукты</a></li>
+            <li><a th:href="@{/admin/blogs}" class="nav-link">Блоги</a></li>
+            <li><a href="#">Заказы</a></li>
+            <li><a th:href="@{/admin/users}" class="nav-link">Пользователи</a></li>
+            <li><a th:href="@{/logout}" class="nav-link">Выйти</a></li>
+        </ul>
+    </section>
+</div>
+
+
+

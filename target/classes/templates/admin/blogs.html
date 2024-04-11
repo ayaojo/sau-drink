@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOGS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/SAU-LOGO.svg">
+    <link rel="stylesheet" href="/css/normolize.css">
+    <link rel="stylesheet" href="/css/main-admin.css">
+</head>
+
+<body>
+<header class="header">
+    <nav>
+        <a th:href="@{/admin/blogs}">Блоги</a>
+        <a th:href="@{/admin/blogs/add}" class="btn">Добавить</a>
+    </nav>
+</header>
+
+<section th:insert="blocks/section :: section"></section>
+
+<main class="main">
+    <div class="container">
+        <table class="table">
+            <thead class="thead-light"><!--Groups the header content in a table-->
+            <tr><!-- Defines a row in a table -->
+                <th scope="col">SN</th><!-- Defines a header cell in a table -->
+                <th scope="col">Название блога</th>
+                <th scope="col">Анонс блога</th>
+                <th scope="col">Удалить</th>
+                <th scope="col">Обновить</th>
+            </tr>
+            </thead>
+            <tbody class="tbody-light"><!-- Groups the body content in a table -->
+            <tr th:each="blog, iStat : ${blogs}">
+                <th th:text="${iStat.index + 1}">1</th>
+                <td th:text="${blog.name}">Larry</td>
+                <td th:text="${blog.anons}">Larry anons</td>
+                <td><a th:href="@{/admin/blogs/delete/{id}(id=${blog.id})}" class="btn-delete">Удалить</a></td>
+                <td><a th:href="@{/admin/blogs/update/{id}(id=${blog.id})}" class="btn-update">Обновить</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+</body>
+</html>
