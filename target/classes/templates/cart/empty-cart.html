@@ -4,30 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAY - SAU</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>SAU - EMPTY CART</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/images/SAU-LOGO.svg">
     <link rel="stylesheet" href="/css/normolize.css">
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 </head>
 
 <body>
-<header th:insert="blocks/header :: header"></header>
+    <header th:insert="blocks/header :: header"></header>
 
-<main class="cart-page">
-    <div class="container">
-        <p>Number of items in cart: <span class="cart-counter" th:text="${cartCounter}"></span></p>
+    <main class="cart-page">
+        <div class="container">
+            <p>Number of items in cart: <span class="cart-counter" th:text="${cartCounter}"></span></p>
 
-        <h2>Your cart is empty</h2>
+            <div class="empty-cart-text">
+                <img src="/images/cart-2.svg">
+                <h1 class="cart-empty-title">Ваша корзина пуста</h1>
+                <h2>Исправить это просто: выберите в магазине интересующий напиток и нажмите кнопку «В корзину»</h2>
+            </div>
+</div>
+    </main>
 
-    </div>
-</main>
-
-<script src="/js/calculateSubtotal.js"></script>
+    <script src="/js/calculateSubtotal.js"></script>
 
 </body>
 </html>

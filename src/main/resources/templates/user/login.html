@@ -35,20 +35,20 @@
                     <div>
                         <form method="post" th:action="@{/login}" role="form">
                             <div class="form-group">
-                                <input type="text" id="username" name="username" required autofocus="autofocus" class="form-control" placeholder="Email" size="44"/>
+                                <input type="text" id="username" name="username" required autofocus="autofocus" class="form-control" placeholder="Электронная почта" size="44"/>
                             </div>
 
                             <div class="form-group">
-                                <input type="password" id="password" name="password" required class="form-control" placeholder="Password" size="44"
+                                <input type="password" id="password" name="password" required class="form-control" placeholder="Пароль" size="44"
                                 />
                             </div>
 
                             <div class="register-btn">
-                                <button type="submit" class="register-btn">Login</button>
+                                <button type="submit" class="register-btn">Авторизоваться</button>
                             </div>
 
-                            <span> Not registered?
-                                <a th:href="@{/register}"> Register/SignUp Here</a>
+                            <span> Не зарегистрированы?
+                                <a th:href="@{/register}"> Зарегистрируйтесь здесь</a>
                             </span>
 
                         </form>

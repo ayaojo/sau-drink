@@ -1,19 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOG SAU Detail</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/SAU-LOGO.svg">
+    <link rel="stylesheet" href="/css/normolize.css">
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-<tr th:each="blog, iStat : ${blogs}">
+    <header th:insert="blocks/header :: header"></header>
+    <main>
+        <div class="container blog-container">
+            <div class="blog-card-container" th:each="blog, iStat : ${blogs}">
 
-    <td th:text="${blog.name}">Larry</td>
-    <td th:text="${blog.anons}">Larry anons</td>
-    <td><img src="#" height="100px" width="100px" th:src="@{${'/blogImages/' +blog.imageName}}"></td>
+                <td class="blog-img"><img src="#" height="100px" width="100px" th:src="@{${'/blogImages/' +blog.imageName}}"></td>
+                <div class="blog-info">
+                    <h2 class="blog-name" th:text="${blog.name}">Larry</h2>
+                    <span class="blog-anons" th:text="${blog.anons}">Larry anons</span>
+                </div>
 
-    <a href="#" th:href="@{/home/blogs/{id} (id=${blog.id})}" class="btn btn-primary">View</a>
+                <a href="#" th:href="@{/home/blogs/{id} (id=${blog.id})}" class="blog-more-btn">View</a>
+            </div>
+        </div>
 
-
-</tr>
+    </main>
 </body>
 </html>

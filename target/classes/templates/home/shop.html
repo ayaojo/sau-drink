@@ -5,14 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SAU SHOP</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="/src/main/resources/static/images/SAU-LOGO.svg">
+  <link rel="shortcut icon" href="/images/SAU-LOGO.svg">
   <link rel="stylesheet" href="/css/normolize.css">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
@@ -30,7 +26,6 @@
           <div class="card-body">
             <h3 class="card-title" th:text="${product.name}"></h3>
             <h4><span th:text="${product.price}"></span></h4>
-            <!--<p th:text="${product.description}">This drink very strong</p>-->
             <a class="view-product-detail-btn" th:href="@{/home/shop/viewproduct/{id}(id=${product.id})}">Подробнее</a>
           </div>
         </div>

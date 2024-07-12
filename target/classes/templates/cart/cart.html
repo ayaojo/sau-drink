@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAY - SAU</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>SAU CART</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/images/SAU-LOGO.svg">
     <link rel="stylesheet" href="/css/normolize.css">
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 </head>
 
 <body>
@@ -20,7 +16,7 @@
 
 <main class="cart-page">
     <div class="container">
-        <p>Number of items in cart: <span class="cart-counter" th:text="${cartCounter}"></span></p>
+        <p>Number of items in cart: <span class="cart-counter"></span></p>
 
         <table id="cart-page-form">
             <tr>
@@ -58,6 +54,22 @@
         <a href="/cart/checkout">Checkout</a>
     </div>
 </main>
+
+<script>
+    // JavaScript код
+    let cartCounterElement = document.querySelector('.cart-counter'); // Определение элемента в JavaScript
+
+    // Функция updateCartCounter()
+    function updateCartCounter() {
+        let cartCounter = 0;
+        Array.from(quantityInputs).forEach((input) => {
+            cartCounter += parseInt(input.value);
+        });
+        cartCounterElement.textContent = cartCounter; // Обновление содержимого элемента счетчика товаров
+    }
+
+    // Остальной JavaScript код, включая определение quantityInputs и другие необходимые функции
+</script>
 
 <script src="/js/calculateSubtotal.js"></script>
 

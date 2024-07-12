@@ -22,15 +22,14 @@
         <div class="register-form">
 
             <div th:if="${param.success}">
-                <div class="alert alert-info">You've successfully registered
-                    to our app!</div>
+                <div class="alert alert-info">Вы успешно зарегистрировались на нашем сайте!</div>
             </div>
 
             <h1>Регистрация</h1>
             <form method="post" role="form" th:action="@{/register/save}" th:object="${user}">
 
                 <div class="form-group">
-                    <input type="text" id="username" autofocus="autofocus" required placeholder="username" minlength="3" maxlength="19" size="44" class="form-control" name="username" th:field="*{username}">
+                    <input type="text" id="username" autofocus="autofocus" required placeholder="Имя пользователя" minlength="3" maxlength="19" size="44" class="form-control" name="username" th:field="*{username}">
                     <p th:errors="*{username}" class="text-danger" th:if="${#fields.hasErrors('username')}"></p>
                 </div>
 
